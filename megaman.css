@@ -1,0 +1,70 @@
+/* megaman x1 
+   width:3374
+   height:582
+ 
+*/
+
+
+/* 
+ megaman x2
+ width:3397
+ height:582
+
+
+*/
+/* 6771 */
+
+body{
+    height: 100vh;
+    background: linear-gradient(90deg,rgba(0,0,0),rgba(0,0,0,0.6)),url('./boss.jpg')center/cover no-repeat fixed;
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:  calc(6771px / 10);
+    height: 582px;
+    background-image: url('./imageonline-co-merged-image.png');
+    animation: runX 1s steps(10)  infinite;
+    /* background-size: 1000px 500px; */
+    /* background-repeat: no-repeat; */
+}
+
+@keyframes runX{
+
+    0%{
+        
+        background-position: 0px;
+    }
+    
+    
+    
+    100%{
+        background-position: 6771px;
+        
+    }
+    
+    
+
+
+
+}
+
+@media screen and (max-width:560px){
+ 
+     .box{
+         transform: translate(-44%,-50%);
+     }
+     body{
+         overflow: hidden;
+         background-image: none;
+         background: linear-gradient(#454caa91, #99341bb2);
+         height: 100vh;
+
+     }
+
+
+
+}
