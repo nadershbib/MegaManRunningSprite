@@ -16,24 +16,24 @@
 
 body{
     height: 100vh;
-    background: linear-gradient(90deg,rgba(0,0,0),rgba(0,0,0,0.6)),url('./boss.jpg')center/cover no-repeat fixed;
+    /* background: linear-gradient(90deg,rgba(0,0,0),rgba(0,0,0,0.6)),url('./boss.jpg')center/cover no-repeat fixed; */
+    overflow: hidden;
+    margin: 0;
 }
 
 .box{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    width:  calc(6771px / 10);
+    transform: translate(-50%,-32%) scale(0.4);
+    width: calc(6771px / 10);
     height: 582px;
-    background-image: url('./imageonline-co-merged-image.png');
-    animation: runX 1s steps(10)  infinite;
-    /* background-size: 1000px 500px; */
-    /* background-repeat: no-repeat; */
+    background-image: url(./imageonline-co-merged-image.png);
+    animation: runX 0.45s steps(10) forwards infinite;
 }
 
 @keyframes runX{
-
+    
     0%{
         
         background-position: 0px;
@@ -47,24 +47,53 @@ body{
     }
     
     
-
-
-
 }
 
-@media screen and (max-width:560px){
- 
-     .box{
-         transform: translate(-44%,-50%);
-     }
-     body{
-         overflow: hidden;
+/* @media screen and (max-width:560px){
+    
+    .box{
+        transform: translate(-44%,-50%);
+    }
+    body{
+        overflow: hidden;
          background-image: none;
          background: linear-gradient(#454caa91, #99341bb2);
          height: 100vh;
+         
+        }
+        
+        
+        
+    } */
+    
+    @media(max-width:380px){
+        .box{
+            transform: translate(-50%,-36%) scale(0.4);
+            
+        }
+}
 
-     }
 
+.bg{
+   content: "";  
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100%;
+   background: url('./stage.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: left left;
+   z-index: -1;
+   animation: runBG linear 7s infinite;
+}
 
-
+@keyframes runBG {
+    from{
+        background-position: bottom left;
+    }
+    to{
+        background-position: bottom right;
+    }
 }
